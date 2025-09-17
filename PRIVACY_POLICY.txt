@@ -1,0 +1,4 @@
+Privacy Policy
+
+All processing occurs locally on the user's device. No images or OCR text are uploaded to servers by default.
+Contact: [your-email@example.com]

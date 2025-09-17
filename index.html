@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Image to PDF Converter PRO — Scan & OCR</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="lib/tailwind.min.css">
+<style>
+body{font-family:system-ui,Segoe UI,Roboto,Arial;padding:20px;}
+.toast{position:fixed;top:12px;right:12px;z-index:9999}
+img.preview{max-width:150px;margin:6px;border:1px solid #ddd;padding:4px;border-radius:6px;}
+</style>
+</head>
+<body>
+  <h1>Image to PDF Converter PRO — Scan & OCR</h1>
+  <p>Developer: replace placeholder files in /lib/ and /tessdata/ with production files.</p>
+  <input id="fileInput" type="file" accept="image/*" multiple>
+  <button id="convertBtn">Convert to PDF (placeholder)</button>
+  <div id="preview"></div>
+  <div class="toast" id="toast"></div>
+
+<script>
+document.getElementById('fileInput').addEventListener('change', function(e){
+  const files = e.target.files;
+  const preview = document.getElementById('preview');
+  preview.innerHTML = '';
+  for (let i=0;i<files.length;i++){
+    const fr = new FileReader();
+    fr.onload = (ev)=> {
+      const img = document.createElement('img');
+      img.src = ev.target.result;
+      img.className = 'preview';
+      preview.appendChild(img);
+    };
+    fr.readAsDataURL(files[i]);
+  }
+});
+
+document.getElementById('convertBtn').addEventListener('click', ()=>{
+  alert('Placeholder: implement full convertToPDF() from project source.');
+});
+</script>
+
+</body>
+</html>
